@@ -1,23 +1,20 @@
-const Main=()=>{
-    const peliculas =[
-        {titulo:"spiderman",duracion:"2hrs"},
-        {titulo:"spiderman2",duracion:"3hrs"},
-        {titulo:"spiderman3",duracion:"2hrs 30 minutos"}
-    ]
+import Card from "../components/Card";
+import animeData from "../data/animeData.json"
+import main from "../styles/main.css"
 
-  return(
+const Main = () => {
+    const {animes} = animeData
+    console.log(animes);
+
+  return (
     <>
-     <h1>holaaaaaaaa</h1>
-    <section>
-        {peliculas.map((pelicula)=>(
-            <article key={pelicula.titulo} >
-                <h1>{pelicula.titulo}</h1>
-                <p>{pelicula.duracion}</p>
-            </article>
-        )
-        )}
-    </section>
+      <section className="CP">
+        {animes.map((elemento) => (
+            
+          <Card key={elemento.titulo} paquete={elemento} />
+        ))}
+      </section>
     </>
-  )
-}
+  );
+};
 export default Main;

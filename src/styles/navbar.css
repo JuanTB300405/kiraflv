@@ -10,6 +10,7 @@
     flex-wrap: wrap;
     position:sticky ;
     top:0px;
+    z-index: 100;
 }
 #kira{
     width: 200px;

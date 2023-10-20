@@ -1,10 +1,12 @@
+import { useState } from "react";
 import navbar from "../styles/navbar.css";
 import kira from "../assets/img/kira.png";
-import { useState } from "react";
 
 const Navbar = () => {
-  const [openNavbar,setOpenNavbar] = useState(false);
-  const handleclic=()=>setOpenNavbar(!openNavbar);
+  const [openNavbar, setOpenNavbar] = useState(false);
+
+  const handleclic = () => setOpenNavbar(!openNavbar);
+
   return (
     <nav className="navbar">
       <section className="navbar__section">
@@ -13,20 +15,11 @@ const Navbar = () => {
         </h1>
       </section>
 
-      <button id="navbar__button" onClick={handleclic} >
-       <>
-         {openNavbar
-          ?
-          <p>cerrar</p>
-          :
-          <p>abrir</p>
-         }
-         
-
-       </>
+      <button id="navbar__button" onClick={handleclic}>
+        <>{openNavbar ? <p>cerrar</p> : <p>abrir</p>}</>
       </button>
 
-      <ul id="navbar__lista"  className={`${openNavbar ? "mostrar" :null }`}>
+      <ul id="navbar__lista" className={`${openNavbar ? "mostrar" : null}`}>
         <li>
           <a href="" className="lista__link">
             INICIO
